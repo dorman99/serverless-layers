@@ -52,13 +52,13 @@ class Dependencies extends AbstractService {
         const resolvedFiles = await resolveFile(pattern.substr(1), {
           cwd: this.layersPackageDir
         });
-        filesToIgnore = filesToIgnore.concat(resolvedFiles);
+        filesToExclude = filesToExclude.concat(resolvedFiles);
       } else {
         // change directory
         const resolvedFiles = await resolveFile(pattern, {
           cwd: this.layersPackageDir
         });
-        filesToExclude = filesToExclude.concat(resolvedFiles);
+        filesToIgnore = filesToIgnore.concat(resolvedFiles);
       }
     }
 
