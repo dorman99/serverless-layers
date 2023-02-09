@@ -9,7 +9,7 @@ const copyFile = require('fs-copy-file'); // node v6.10.3 support
 
 const AbstractService = require('../AbstractService');
 
-function resolveFile(from) {
+function resolveFile(from, opts = {}) {
   return new Promise((resolve, reject) => {
     glob(from, opts, (err, files) => {
       if (err) return reject();
